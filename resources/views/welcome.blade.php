@@ -8,14 +8,6 @@
         @vite('resources/css/app.css')
     </head>
     <body class="antialiased">
-        <ul>
-            @foreach ($menus as $menu)
-                <li>
-                    <a href="{{ $menu['url'] }}">
-                        {{ $menu['name'] }}
-                    </a>
-                </li>
-            @endforeach
-        </ul>
+        
     </body>
 </html>
