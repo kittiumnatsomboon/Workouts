@@ -20,9 +20,9 @@
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="{{URL::TO('/')}}">
                 <img src="images/logo.png" class="navbar-brand-image img-fluid" alt="Tiya Golf Club">
-                <span class="navbar-brand-text">
-                    Tiya
-                    <small>Golf Club</small>
+                <span class="navbar-brand-text text-white">
+                    แชมป์
+                    <small>ออกกำลังกาย</small>
                 </span>
             </a>
 

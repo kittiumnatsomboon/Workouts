@@ -11,13 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tenant', function (Blueprint $table) {
-            $table->id('tenant_id');
-            $table->string('fistname');
-            $table->string('lastname');
-            $table->string('phonenumber');
-            $table->string('email')->unique();
+        Schema::create('repandset', function (Blueprint $table) {
+            $table->id('repid');
+            $table->integer('rep');
+            $table->integer('set');
             $table->timestamps();
+            $table->foreignId('exercises_id')
+            ->constrained('exercises')
+            ->cascadeOnDelete()
+            ->noActionOnUpdate();
         });
     }
 
@@ -26,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tenant');
+        //
     }
 };
