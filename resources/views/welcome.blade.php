@@ -4,10 +4,16 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
-        @vite('resources/css/app.css')
+        <title>ระบบจัดตาราง</title>
+        @extends('component.header')
     </head>
-    <body class="antialiased">
-        
+    <body>
+      
+        @extends('component.navbar')
+
+        @section('content')
+            
+        @endsection
+      
     </body>
 </html>
