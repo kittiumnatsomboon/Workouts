@@ -7,9 +7,18 @@
     @extends('component.header')
 </head>
 <body>
+    @php
+    $menus = [
+        ['label' => 'หน้าแรก', 'link' => '/'],
+        ['label' => 'เกี่ยวกับเรา', 'link' => 'about'],
+        ['label' => 'ติดต่อเรา', 'link' => '/contact'],
+        ['label' => 'สมัครสมาชิก', 'link' => '/register'],
+        ['label' => 'เข้าสู่ระบบ', 'link' => '/login'],
+    ];
+    @endphp
     <nav class="navbar navbar-expand-lg">                
         <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="index.html">
+            <a class="navbar-brand d-flex align-items-center" href="{{URL::TO('/')}}">
                 <img src="images/logo.png" class="navbar-brand-image img-fluid" alt="Tiya Golf Club">
                 <span class="navbar-brand-text">
                     Tiya
@@ -27,25 +36,15 @@
 
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-lg-auto">
-                    <li class="nav-item">
-                        <a class="nav-link click-scroll" href="#section_1">Home</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link click-scroll" href="#section_2">About</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link click-scroll" href="#section_3">Membership</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link click-scroll" href="#section_4">Events</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link click-scroll" href="#section_5">Contact Us</a>
-                    </li>
+                    @foreach($menus as $menu)
+                        <li class="nav-item">
+                            <a href="{{$menu['link']}}" 
+                                class="nav-link click-scroll"
+                            >
+                                {{ $menu['label'] }}
+                            </a>
+                        </li>
+                    @endforeach
 
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarLightDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
@@ -57,10 +56,6 @@
                         </ul>
                     </li>
                 </ul>
-
-                <div class="d-none d-lg-block ms-lg-3">
-                    <a class="btn custom-btn custom-border-btn" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">Member Login</a>
-                </div>
             </div>
         </div>
     </nav>
