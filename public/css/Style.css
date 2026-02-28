@@ -57,3 +57,9 @@ body{
   display: flex;
   justify-content: space-between;
 }
+
+.message{
+  padding-top: 6%;
+  border-radius: 9%;
+  color:green;
+}

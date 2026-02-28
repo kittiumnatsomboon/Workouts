@@ -15,14 +15,14 @@
                     src="https://img.icons8.com/fluent/344/year-of-tiger.png" />
                 </header>
 
-                <form class="login-form" action="" method="post">
-                
+                <form class="login-form" action="{{route('/signup')}}" method="post">
+                    @csrf
                     <div class="login-form__group">
-                        <label class="login-form__label" for="username">ชื่อ</label>
+                        <label class="login-form__label" for="firstname">ชื่อ</label>
                         <input class="login-form__input" 
                             type="text" 
-                            name="username"
-                            id="username"
+                            name="firstname"
+                            id="firstname"
                             placeholder="กรุณาระบุชื่อ"
                             >
                     </div>
@@ -66,7 +66,11 @@
                             placeholder="กรุณาระบุยืนยันรหัสผ่าน"
                         >
                     </div>
-
+                    @if(session('success'))
+                        <div class="message">
+                            {{ session('success') }}
+                        </div>
+                    @endif
                     <div class="login-form__actions">
                         <input class="login-form__button login-form__button--primary" 
                             type="submit" value="สมัครสมาชิก">
