@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Welcomecontroller;
 use App\Http\Controllers\Registercontroller;
+use App\Http\Controllers\Logincontroller;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,10 +19,13 @@ Route::get('/',[Welcomecontroller::class,'index']);
 Route::get('/about',function(){
     return view('about');
 });
-
+// กลุ่มของ controller Register
 Route::controller(Registercontroller::class)->group(function () {
     Route::get('/register', 'create');
     Route::post('/signup', 'store')->name('/signup');
 });
-
-
+// กลุ่มของ controller Login
+Route::controller(Logincontroller::class)->group(function () {
+    Route::get('/login', 'create');
+    Route::post('/login', 'store')->name('/signin');
+});
