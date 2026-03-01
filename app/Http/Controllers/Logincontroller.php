@@ -27,7 +27,8 @@ class Logincontroller extends Controller
      */
     public function store(Request $request)
     {
-        //
+        echo $_POST["email"];
+        echo $_POST["password"];
     }
 
     /**
