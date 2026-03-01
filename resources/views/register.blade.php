@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/Style.css">
-    <title>Document</title>
+    <title>สมัครสมาชิก</title>
+    <link rel="stylesheet" href="css/screen.css">
+	
 </head>
 <body>
     <div class="login-page">
@@ -15,10 +17,12 @@
                     src="https://img.icons8.com/fluent/344/year-of-tiger.png" />
                 </header>
 
-                <form class="login-form" action="{{route('/signup')}}" method="post">
+                <form class="login-form" id="formregister" action="{{route('/signup')}}" method="post">
                     @csrf
                     <div class="login-form__group">
-                        <label class="login-form__label" for="firstname">ชื่อ</label>
+                        <label class="login-form__label" for="firstname">
+                            ชื่อ
+                        </label>
                         <input class="login-form__input" 
                             type="text" 
                             name="firstname"
@@ -81,5 +85,11 @@
             </footer>
         </div>
     </div>
+
+    <script src="{{asset('js/lib/jquery.js')}}"></script>
+	<script src="{{asset('js/dist/jquery.validate.js')}}"></script>
+	<script src="{{asset('js/validate/registervalidate.js')}}"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>
