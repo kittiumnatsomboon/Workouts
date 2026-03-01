@@ -20,7 +20,9 @@
                 <form class="login-form" id="formregister" action="{{route('/signup')}}" method="post">
                     @csrf
                     <div class="login-form__group">
-                        <label class="login-form__label" for="firstname">ชื่อ</label>
+                        <label class="login-form__label" for="firstname">
+                            ชื่อ
+                        </label>
                         <input class="login-form__input" 
                             type="text" 
                             name="firstname"
