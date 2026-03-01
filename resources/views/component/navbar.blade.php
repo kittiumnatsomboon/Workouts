@@ -11,9 +11,7 @@
     $menus = [
         ['label' => 'หน้าแรก', 'link' => '/'],
         ['label' => 'เกี่ยวกับเรา', 'link' => 'about'],
-        ['label' => 'ติดต่อเรา', 'link' => '/contact'],
-        ['label' => 'สมัครสมาชิก', 'link' => '/register'],
-        ['label' => 'เข้าสู่ระบบ', 'link' => '/login'],
+        ['label' => 'ติดต่อเรา', 'link' => '/contact']
     ];
     @endphp
     <nav class="navbar navbar-expand-lg">                
@@ -45,7 +43,22 @@
                             </a>
                         </li>
                     @endforeach
-
+                    <!-- Check login -->
+                    @if(Auth::check())
+                         <li class="nav-item">
+                             <a href="#" class="nav-link click-scroll">
+                                {{ Auth::user()->fistname }}
+                                {{ Auth::user()->lastname }}
+                            </a>
+                         </li>
+                         @else
+                         <li class="nav-item">
+                             <a href="/register" class="nav-link click-scroll">สมัครสมาชิก</a>
+                         </li>
+                         <li class="nav-item">
+                             <a href="/login" class="nav-link click-scroll">เข้าสู่ระบบ</a>
+                         </li>
+                    @endif
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarLightDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
 
