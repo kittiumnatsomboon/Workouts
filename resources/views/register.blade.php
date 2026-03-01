@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/Style.css">
-    <title>Document</title>
+    <title>สมัครสมาชิก</title>
+    <link rel="stylesheet" href="css/screen.css">
+	
 </head>
 <body>
     <div class="login-page">
@@ -81,5 +83,9 @@
             </footer>
         </div>
     </div>
+
+    <script src="{{asset('js/lib/jquery.js')}}"></script>
+	<script src="{{asset('js/dist/jquery.validate.js')}}"></script>
+	<script src="{{asset('js/validate/registervalidate.js')}}"></script>
 </body>
 </html>
