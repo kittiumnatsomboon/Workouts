@@ -17,7 +17,7 @@
                     src="https://img.icons8.com/fluent/344/year-of-tiger.png" />
                 </header>
 
-                <form class="login-form" action="{{route('/signup')}}" method="post">
+                <form class="login-form" id="formregister" action="{{route('/signup')}}" method="post">
                     @csrf
                     <div class="login-form__group">
                         <label class="login-form__label" for="firstname">ชื่อ</label>
@@ -87,5 +87,7 @@
     <script src="{{asset('js/lib/jquery.js')}}"></script>
 	<script src="{{asset('js/dist/jquery.validate.js')}}"></script>
 	<script src="{{asset('js/validate/registervalidate.js')}}"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>
