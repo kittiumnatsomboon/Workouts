@@ -16,7 +16,7 @@
                     src="https://img.icons8.com/fluent/344/year-of-tiger.png" />
                 </header>
 
-                <form class="login-form" id="formregister" action="" method="post">
+                <form class="login-form" id="formregister" action="{{route('/signin')}}" method="post">
                     @csrf
 
                     <div class="login-form__group">
